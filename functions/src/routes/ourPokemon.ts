@@ -5,10 +5,10 @@ import { getClient } from '../db';
 
 const routes = express.Router();
 
-routes.get("/our_pokemon", async (req, res) => {
+routes.get("/accounts", async (req, res) => {
     try {
         const client = await getClient();
-        const results = await client.db().collection("our_pokemon")
+        const results = await client.db().collection("accounts")
             .find().toArray();
         res.json(results); // send JSON results
     } catch (err) {

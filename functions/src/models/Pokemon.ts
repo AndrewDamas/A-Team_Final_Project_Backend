@@ -1,9 +1,20 @@
 import { ObjectId } from "mongodb";
 
-export default interface Pokemon {
+export default interface Account {
     _id?: ObjectId,
+    email: string,
+    username: string,
+    password: string,
+    ourPokemon: Pokemon[],
+    character_name: string,
+    badges: string[],
+    bank: number
+}
+
+interface Pokemon {
+    id: number,
     base_experience: number,
-    moves: Move[],
+    moves: Moves[],
     name: string,
     species: {
         url: string
@@ -13,9 +24,10 @@ export default interface Pokemon {
     types: Type[]
 }
 
-interface Move {
+interface Moves {
     move: {
-        name: string
+        name: string,
+        url: string
     },
     version_group_details: {
         level_learned_at: number,
@@ -25,6 +37,25 @@ interface Move {
         version_group: {
             name: string
         }
+    }
+}
+
+interface Move {
+    id: number,
+    name: string,
+    accuracy: number,
+    pp: number,
+    power: number,
+    damage_class: {
+        name: string
+    },
+    meta: {
+        ailment: {
+            name: string
+        }
+    }
+    type: {
+        name: string
     }
 }
 
