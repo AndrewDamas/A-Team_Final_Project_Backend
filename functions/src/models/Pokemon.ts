@@ -8,10 +8,11 @@ export default interface Account {
     ourPokemon: Pokemon[],
     character_name: string,
     badges: string[],
-    bank: number
+    bank: number,
+    doneWithTutorial: boolean
 }
 
-interface Pokemon {
+export interface Pokemon {
     id: number,
     base_experience: number,
     moves: Moves[],
@@ -40,7 +41,7 @@ interface Moves {
     }
 }
 
-interface Move {
+/* interface Move {
     id: number,
     name: string,
     accuracy: number,
@@ -57,7 +58,7 @@ interface Move {
     type: {
         name: string
     }
-}
+} */
 
 interface Sprites {
     back_default: string,
