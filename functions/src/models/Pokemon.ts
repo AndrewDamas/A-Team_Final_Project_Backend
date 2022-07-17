@@ -14,6 +14,9 @@ export default interface Account {
 
 export interface Pokemon {
     id: number,
+    level: number,
+    gender: string,
+    current_hp: number,
     base_experience: number,
     moves: Moves[],
     name: string,
@@ -30,15 +33,17 @@ interface Moves {
         name: string,
         url: string
     },
-    version_group_details: {
-        level_learned_at: number,
-        move_learn_method: {
-            name: string
-        },
-        version_group: {
-            name: string
+    version_group_details: [
+        {
+            level_learned_at: number,
+            move_learn_method: {
+                name: string
+            },
+            version_group: {
+                name: string
+            }
         }
-    }
+    ]
 }
 
 /* interface Move {
