@@ -2,9 +2,9 @@ import express from 'express';
 import { getClient } from '../db';
 import Account, { Pokemon } from '../models/Pokemon';
 // import { ObjectId } from 'mongodb';
-//import ShoutOut from '../models/shoutout';
 
 const routes = express.Router();
+
 
 routes.get("/accounts", async (req, res) => {
     try {
